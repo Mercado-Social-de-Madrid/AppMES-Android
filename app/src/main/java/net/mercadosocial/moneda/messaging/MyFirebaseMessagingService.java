@@ -178,6 +178,7 @@ public class MyFirebaseMessagingService extends FirebaseMessagingService {
                 .setLargeIcon(BitmapFactory.decodeResource(getResources(), R.mipmap.ic_mes_v2_144))
                 .setContentTitle(title != null ? title : getString(R.string.app_name))
                 .setContentText(message)
+                .setStyle(new NotificationCompat.BigTextStyle().bigText(message))
                 .setAutoCancel(true)
                 .setSound(defaultSoundUri);
 
@@ -186,8 +187,6 @@ public class MyFirebaseMessagingService extends FirebaseMessagingService {
         extras.putInt(KEY_ID_NOTIFICATION, idNotification);
 
         Intent intent = null;
-        Intent intentActionButton1 = null;
-        Intent intentActionButton2 = null;
 
         switch (notification.getType()) {
             case Notification.TYPE_NEWS:
