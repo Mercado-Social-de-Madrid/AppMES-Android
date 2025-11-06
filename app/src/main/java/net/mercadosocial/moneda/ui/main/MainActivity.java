@@ -1,9 +1,14 @@
 package net.mercadosocial.moneda.ui.main;
 
 
+import android.app.NotificationChannel;
+import android.app.NotificationManager;
 import android.content.ActivityNotFoundException;
+import android.content.Context;
 import android.content.Intent;
+import android.graphics.BitmapFactory;
 import android.graphics.Color;
+import android.media.RingtoneManager;
 import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
@@ -14,21 +19,14 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import androidx.activity.EdgeToEdge;
-import androidx.activity.SystemBarStyle;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatDelegate;
 import androidx.appcompat.widget.Toolbar;
-import androidx.core.content.ContextCompat;
-import androidx.core.graphics.Insets;
+import androidx.core.app.NotificationCompat;
 import androidx.core.os.LocaleListCompat;
 import androidx.core.view.GravityCompat;
-import androidx.core.view.ViewCompat;
-import androidx.core.view.WindowCompat;
-import androidx.core.view.WindowInsetsCompat;
-import androidx.core.view.WindowInsetsControllerCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentTransaction;
@@ -47,6 +45,7 @@ import net.mercadosocial.moneda.api.common.ApiConfig;
 import net.mercadosocial.moneda.api.response.Data;
 import net.mercadosocial.moneda.base.BaseActivity;
 import net.mercadosocial.moneda.base.BaseFragment;
+import net.mercadosocial.moneda.messaging.MyFirebaseMessagingService;
 import net.mercadosocial.moneda.model.FilterEntities;
 import net.mercadosocial.moneda.model.Node;
 import net.mercadosocial.moneda.model.SocialProfile;
@@ -165,6 +164,51 @@ public class MainActivity extends BaseActivity implements BottomNavigationView.O
 
         presenter.onCreate(getIntent());
 
+
+//        showNotification("La ruta de la brujería", "La ruta de la brujería una pedalada circular, para iniciados, de 4 días, y que transcurre por las hermosas montañas y cuevas del Pirineo navarro, recorriendo los escenarios donde la superstición y el miedo persiguió a vecinas y vecinos acusándolos de brujería y condenándolos a la hoguera. ");
+    }
+
+    private void showNotification(String title, String message) {
+        // Create the NotificationChannel, but only on API 26+ because
+        // the NotificationChannel class is new and not in the support library
+
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+
+            NotificationManager notificationManager =
+                    (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
+
+            if (notificationManager.getNotificationChannels().contains(MyFirebaseMessagingService.CHANNEL_ID)) {
+                return;
+            }
+
+
+            CharSequence name = getString(R.string.channel_name);
+            String description = getString(R.string.channel_description);
+
+            NotificationChannel channel = new NotificationChannel(MyFirebaseMessagingService.CHANNEL_ID, name, NotificationManager.IMPORTANCE_DEFAULT);
+
+            int importance = NotificationManager.IMPORTANCE_HIGH;
+            channel.setDescription(description);
+            channel.setImportance(importance);
+            notificationManager.createNotificationChannel(channel);
+
+
+
+            Uri defaultSoundUri = RingtoneManager.getDefaultUri(RingtoneManager.TYPE_NOTIFICATION);
+            NotificationCompat.Builder notificationBuilder = new NotificationCompat.Builder(this, MyFirebaseMessagingService.CHANNEL_ID)
+                    .setSmallIcon(R.mipmap.ic_mes_v2_144)
+                    .setLargeIcon(BitmapFactory.decodeResource(getResources(), R.mipmap.ic_mes_v2_144))
+                    .setContentTitle(title != null ? title : getString(R.string.app_name))
+                    .setContentText(message)
+                    .setAutoCancel(true)
+                    .setStyle(new NotificationCompat.BigTextStyle().bigText(message))
+                    .setSound(defaultSoundUri);
+
+            int idNotification = (int) System.currentTimeMillis();
+
+            notificationManager.notify(idNotification, notificationBuilder.build());
+
+        }
     }
 
     @Override
