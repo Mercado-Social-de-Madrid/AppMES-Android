@@ -69,11 +69,8 @@ public class GalleryPagerFragment extends Fragment implements ViewPager.OnPageCh
 
         GalleryPagerAdapter adapter = new GalleryPagerAdapter(getActivity().getSupportFragmentManager(), imagesUrls);
         if (!(getActivity() instanceof GalleryFullScreenActivity)) {
-            adapter.setOnImageClickListener(new GalleryPagerAdapter.onImageClickListener() {
-                @Override
-                public void onImageClick(int position) {
-                    GalleryFullScreenActivity.launchGalleryFullScreen(getActivity(), imagesSerialized, position);
-                }
+            adapter.setOnImageClickListener(position -> {
+                GalleryFullScreenActivity.launchGalleryFullScreen(getActivity(), imagesSerialized, position);
             });
         }
 

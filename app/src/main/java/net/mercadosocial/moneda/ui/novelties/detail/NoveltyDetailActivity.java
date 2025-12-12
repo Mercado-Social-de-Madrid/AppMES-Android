@@ -11,6 +11,7 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
+import com.google.gson.Gson;
 import com.squareup.picasso.Picasso;
 
 import net.mercadosocial.moneda.R;
@@ -21,8 +22,11 @@ import net.mercadosocial.moneda.model.News;
 import net.mercadosocial.moneda.model.Novelty;
 import net.mercadosocial.moneda.model.Offer;
 import net.mercadosocial.moneda.ui.entity_info.EntityInfoPresenter;
+import net.mercadosocial.moneda.ui.entity_info.gallery.GalleryFullScreenActivity;
 import net.mercadosocial.moneda.util.Util;
 import net.mercadosocial.moneda.util.WebUtils;
+
+import java.util.List;
 
 public class NoveltyDetailActivity extends BaseActivity implements NoveltyDetailView {
 
@@ -96,13 +100,18 @@ public class NoveltyDetailActivity extends BaseActivity implements NoveltyDetail
 
         String image = novelty.getImageNoveltyUrl();
 
-        if (WebUtils.isValidLink(image)) {
+        if (image != null) {
             binding.imgNovelty.setVisibility(View.VISIBLE);
             Picasso.get()
                     .load(image)
                     .placeholder(novelty.getNoveltyType() == Novelty.TYPE_NEWS ? R.mipmap.img_mes_header : R.mipmap.ic_offer_semitransp)
                     .resizeDimen(R.dimen.width_image_standard, R.dimen.height_image_small)
                     .into(binding.imgNovelty);
+
+            binding.imgNovelty.setOnClickListener(v -> {
+                String imageSerialized = new Gson().toJson(List.of(image));
+                GalleryFullScreenActivity.launchGalleryFullScreen(NoveltyDetailActivity.this, imageSerialized, 0);
+            });
         } else {
             binding.imgNovelty.setVisibility(View.GONE);
         }

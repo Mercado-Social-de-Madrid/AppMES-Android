@@ -58,7 +58,7 @@ public class NoveltiesAdapter extends RecyclerView.Adapter<NoveltiesAdapter.View
 
         String image = novelty.getImageNoveltyUrl();
 
-        if (WebUtils.isValidLink(image)) {
+        if (image != null) {
             Picasso.get()
                     .load(image)
                     .placeholder(novelty.getNoveltyType() == Novelty.TYPE_NEWS ? R.mipmap.ic_mes_v2_144_semitransp : R.mipmap.ic_offer_semitransp)

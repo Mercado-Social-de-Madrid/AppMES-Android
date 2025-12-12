@@ -53,7 +53,13 @@ public class Offer implements Serializable, Novelty {
     }
 
     public String getBanner_image() {
-        return ApiClient.MEDIA_URL + banner_image;
+        if (banner_image == null || banner_image.isEmpty()) {
+            return null;
+        } else if (banner_image.startsWith("http")) {
+            return banner_image;
+        } else {
+            return ApiClient.MEDIA_URL + banner_image;
+        }
     }
 
     public void setBanner_image(String banner_image) {
