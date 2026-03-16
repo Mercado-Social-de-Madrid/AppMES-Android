@@ -40,7 +40,7 @@ public class ProgressDialogMES extends DialogFragment {
     private Handler handler;
 
 
-    private Runnable delayedHide = () -> {
+    private final Runnable delayedHide = () -> {
         postedHide = false;
         timeStart = -1;
 

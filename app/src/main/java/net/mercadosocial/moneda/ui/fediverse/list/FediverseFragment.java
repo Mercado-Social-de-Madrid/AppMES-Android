@@ -40,7 +40,7 @@ public class FediverseFragment extends BaseFragment implements FediverseView {
     private FediverseAdapter adapter;
     private FediversePresenter presenter;
 
-    private String fediverseServer;
+    private final String fediverseServer;
 
     public FediverseFragment(String fediverseServer) {
         this.fediverseServer = fediverseServer;

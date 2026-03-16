@@ -94,8 +94,8 @@ public class SelectMESView extends FrameLayout {
 
 
         private int selectedPosition = -1;
-        private List<Node> nodes;
-        private Context context;
+        private final List<Node> nodes;
+        private final Context context;
         private OnItemClickListener itemClickListener;
 
 
@@ -147,7 +147,7 @@ public class SelectMESView extends FrameLayout {
             public ViewHolder(View itemView) {
                 super(itemView);
 
-                tvMESName = (TextView) itemView.findViewById(R.id.tv_mes_name);
+                tvMESName = itemView.findViewById(R.id.tv_mes_name);
                 rootView = itemView;
                 rootView.setOnClickListener(v -> {
                     selectedPosition = getAdapterPosition();

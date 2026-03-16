@@ -319,7 +319,7 @@ public abstract class BaseActivity extends AppCompatActivity implements BaseView
 
     public void configureToolbar() {
 
-        toolbar = (Toolbar) findViewById(R.id.toolbar);
+        toolbar = findViewById(R.id.toolbar);
 
         if (toolbar == null) {
             return;
@@ -327,8 +327,8 @@ public abstract class BaseActivity extends AppCompatActivity implements BaseView
 
         setSupportActionBar(toolbar);
 
-        progressBar = (ProgressBar) findViewById(R.id.progressbar);
-        tvTitleToolbar = (TextView) findViewById(R.id.tv_title_toolbar);
+        progressBar = findViewById(R.id.progressbar);
+        tvTitleToolbar = findViewById(R.id.tv_title_toolbar);
         tvTitleToolbar.setVisibility(View.VISIBLE);
 
         tvTitleToolbar.setText(getSupportActionBar().getTitle());
@@ -337,7 +337,7 @@ public abstract class BaseActivity extends AppCompatActivity implements BaseView
         getSupportActionBar().setDisplayShowTitleEnabled(false);
         getSupportActionBar().setHomeButtonEnabled(true);
 
-        appBarLayout = (AppBarLayout) findViewById(R.id.appbar_layout);
+        appBarLayout = findViewById(R.id.appbar_layout);
 
     }
 

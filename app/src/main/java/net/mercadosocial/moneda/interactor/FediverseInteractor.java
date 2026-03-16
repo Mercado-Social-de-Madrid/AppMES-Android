@@ -25,7 +25,7 @@ import rx.schedulers.Schedulers;
 
 public class FediverseInteractor extends BaseInteractor {
 
-    private String fediverseUrl;
+    private final String fediverseUrl;
 
     public FediverseInteractor(Context context, BaseView baseView, String fediverseUrl) {
         this.context = context;

@@ -19,8 +19,8 @@ import java.util.List;
 public class CategoriesFilterAdapter extends RecyclerView.Adapter<CategoriesFilterAdapter.ViewHolder> {
 
 
-    private List<Category> categories;
-    private Context context;
+    private final List<Category> categories;
+    private final Context context;
     private OnItemClickListener itemClickListener;
 
 
@@ -59,8 +59,8 @@ public class CategoriesFilterAdapter extends RecyclerView.Adapter<CategoriesFilt
     }
 
     public void setCheckBoxColor(CheckBox checkBox, int checkedColor, int uncheckedColor) {
-        int states[][] = {{android.R.attr.state_checked}, {}};
-        int colors[] = {checkedColor, uncheckedColor};
+        int[][] states = {{android.R.attr.state_checked}, {}};
+        int[] colors = {checkedColor, uncheckedColor};
         CompoundButtonCompat.setButtonTintList(checkBox, new
                 ColorStateList(states, colors));
     }
@@ -84,7 +84,7 @@ public class CategoriesFilterAdapter extends RecyclerView.Adapter<CategoriesFilt
 
             super(itemView);
 
-            checkCategory = (CheckBox) itemView.findViewById(R.id.check_category);
+            checkCategory = itemView.findViewById(R.id.check_category);
 
             rootView = itemView;
 

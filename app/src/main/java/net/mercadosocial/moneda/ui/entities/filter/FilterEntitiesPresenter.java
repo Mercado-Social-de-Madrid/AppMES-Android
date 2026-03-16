@@ -18,7 +18,7 @@ import java.util.List;
 public class FilterEntitiesPresenter extends BasePresenter {
 
     private final FilterEntitiesView view;
-    private List<Category> categories = new ArrayList<>();
+    private final List<Category> categories = new ArrayList<>();
 
     public static FilterEntitiesPresenter newInstance(FilterEntitiesView view, Context context) {
 

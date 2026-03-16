@@ -32,9 +32,9 @@ public class GalleryPagerFragment extends Fragment implements ViewPager.OnPageCh
     private List<String> imagesUrls;
 
     private void findViews(View layout) {
-        viewpagerGallery = (ViewPager) layout.findViewById(R.id.viewpager_gallery);
-        imgArrowLeft = (ImageView) layout.findViewById(R.id.img_arrow_left);
-        imgArrowRight = (ImageView) layout.findViewById(R.id.img_arrow_right);
+        viewpagerGallery = layout.findViewById(R.id.viewpager_gallery);
+        imgArrowLeft = layout.findViewById(R.id.img_arrow_left);
+        imgArrowRight = layout.findViewById(R.id.img_arrow_right);
 
         imgArrowLeft.setOnClickListener(this);
         imgArrowRight.setOnClickListener(this);

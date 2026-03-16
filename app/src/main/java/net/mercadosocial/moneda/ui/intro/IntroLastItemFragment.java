@@ -24,8 +24,8 @@ public class IntroLastItemFragment extends BaseFragment implements View.OnClickL
     private SelectMESView selectMESView;
 
     private void findViews(View layout) {
-        btnIntroEnter = (TextView)layout.findViewById( R.id.btn_intro_enter );
-        selectMESView = (SelectMESView) layout.findViewById(R.id.select_mes_view);
+        btnIntroEnter = layout.findViewById( R.id.btn_intro_enter );
+        selectMESView = layout.findViewById(R.id.select_mes_view);
 
         btnIntroEnter.setOnClickListener(this);
     }

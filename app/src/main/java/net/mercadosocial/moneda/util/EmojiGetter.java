@@ -12,8 +12,8 @@ import com.squareup.picasso.Picasso;
 import com.squareup.picasso.Target;
 
 public class EmojiGetter implements Html.ImageGetter {
-    private Context context;
-    private TextView textView;
+    private final Context context;
+    private final TextView textView;
 
     public EmojiGetter(Context context, TextView target) {
         this.context = context;

@@ -21,8 +21,8 @@ import java.util.List;
 public class ProviderSocialProfileAdapter extends RecyclerView.Adapter<ProviderSocialProfileAdapter.ViewHolder> {
 
 
-    private List<SocialProfile> socialProfiles;
-    private Context context;
+    private final List<SocialProfile> socialProfiles;
+    private final Context context;
     private OnItemClickListener itemClickListener;
 
 

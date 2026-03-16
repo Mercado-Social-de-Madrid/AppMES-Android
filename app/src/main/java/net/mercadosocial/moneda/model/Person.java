@@ -116,7 +116,7 @@ public class Person extends Account {
     }
 
     public boolean is_guest_account() {
-        return is_guest_account == null ? false : is_guest_account;
+        return is_guest_account != null && is_guest_account;
     }
 
     public void setIs_guest_account(boolean is_guest_account) {

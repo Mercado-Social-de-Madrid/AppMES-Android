@@ -22,10 +22,10 @@ public class EntitiyOffersAdapter extends RecyclerView.Adapter<EntitiyOffersAdap
 
 
     private List<Offer> offers;
-    private Context context;
+    private final Context context;
     private OnItemClickListener itemClickListener;
 
-    private Integer selectedNumber = -1;
+    private final Integer selectedNumber = -1;
 
 
     public EntitiyOffersAdapter(Context context, List<Offer> offers) {
@@ -58,7 +58,7 @@ public class EntitiyOffersAdapter extends RecyclerView.Adapter<EntitiyOffersAdap
             Picasso.get()
                     .load(image)
 //                .placeholder(R.mipmap.img_default_grid)
-                    .error(R.mipmap.ic_mes_v2_144)
+                    .error(R.mipmap.ic_mes_v3_green)
                     .resizeDimen(R.dimen.width_image_small, R.dimen.height_image_small)
                     .into(holder.imgOffer);
         }
@@ -82,18 +82,18 @@ public class EntitiyOffersAdapter extends RecyclerView.Adapter<EntitiyOffersAdap
 
     public class ViewHolder extends RecyclerView.ViewHolder {
 
-        private ImageView imgOffer;
-        private TextView tvOfferName;
-        private TextView tvOfferDate;
+        private final ImageView imgOffer;
+        private final TextView tvOfferName;
+        private final TextView tvOfferDate;
         public View rootView;
 
         public ViewHolder(View itemView) {
 
             super(itemView);
 
-            imgOffer = (ImageView) itemView.findViewById(R.id.img_offer);
-            tvOfferName = (TextView) itemView.findViewById(R.id.tv_offer_name);
-            tvOfferDate = (TextView) itemView.findViewById(R.id.tv_offer_date);
+            imgOffer = itemView.findViewById(R.id.img_offer);
+            tvOfferName = itemView.findViewById(R.id.tv_offer_name);
+            tvOfferDate = itemView.findViewById(R.id.tv_offer_date);
 
             rootView = itemView;
 

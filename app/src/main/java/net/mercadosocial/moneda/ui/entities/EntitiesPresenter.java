@@ -35,7 +35,7 @@ public class EntitiesPresenter extends BasePresenter {
     private final EntityInteractor entityInteractor;
     private final UserInteractor userInteractor;
     private final CategoriesInteractor categoriesInteractor;
-    private List<Entity> entities = new ArrayList<>();
+    private final List<Entity> entities = new ArrayList<>();
     private FilterEntities filterEntities;
     private boolean refreshFavouritesAtEnd;
 

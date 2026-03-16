@@ -47,7 +47,7 @@ public class NoveltiesFragment extends BaseFragment implements NoveltiesAdapter.
     }
 
     private void findViews(View layout) {
-        recyclerNovelties = (RecyclerView) layout.findViewById(R.id.recycler_novelties);
+        recyclerNovelties = layout.findViewById(R.id.recycler_novelties);
         tvEmptyState = layout.findViewById(R.id.tv_empty_state);
     }
 

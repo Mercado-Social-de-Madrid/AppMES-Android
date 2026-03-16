@@ -14,7 +14,7 @@ public class ProgressView extends FrameLayout {
 
     private final View imgEticsRotative;
     private boolean isShowing;
-    private RotateAnimation rotateAnim;
+    private final RotateAnimation rotateAnim;
 
     public ProgressView(Context context) {
         this(context, null);

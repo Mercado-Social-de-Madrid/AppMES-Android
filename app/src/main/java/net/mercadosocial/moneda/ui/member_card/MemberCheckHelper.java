@@ -14,8 +14,8 @@ import net.mercadosocial.moneda.interactor.UserInteractor;
 
 public class MemberCheckHelper {
 
-    private Context context;
-    private BaseView view;
+    private final Context context;
+    private final BaseView view;
 
     public MemberCheckHelper(Context context, BaseView view) {
         this.context = context;

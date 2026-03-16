@@ -29,8 +29,8 @@ public class LoginActivity extends BaseActivity implements View.OnClickListener,
     private View btnRegister;
 
     private void findViews() {
-        editUsername = (EditText)findViewById( R.id.edit_username );
-        editPassword = (EditText)findViewById( R.id.edit_password );
+        editUsername = findViewById( R.id.edit_username );
+        editPassword = findViewById( R.id.edit_password );
         btnRememberPassword = findViewById(R.id.btn_remember_password);
         btnLogin = findViewById(R.id.btn_login);
         btnRegister = findViewById(R.id.btn_register);

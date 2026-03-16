@@ -1,15 +1,7 @@
 package net.mercadosocial.moneda.ui.novelties.detail;
 
-import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
-
-import androidx.activity.EdgeToEdge;
-import androidx.activity.SystemBarStyle;
-import androidx.core.content.ContextCompat;
-import androidx.core.graphics.Insets;
-import androidx.core.view.ViewCompat;
-import androidx.core.view.WindowInsetsCompat;
 
 import com.google.gson.Gson;
 import com.squareup.picasso.Picasso;
@@ -104,7 +96,7 @@ public class NoveltyDetailActivity extends BaseActivity implements NoveltyDetail
             binding.imgNovelty.setVisibility(View.VISIBLE);
             Picasso.get()
                     .load(image)
-                    .placeholder(novelty.getNoveltyType() == Novelty.TYPE_NEWS ? R.mipmap.img_mes_header : R.mipmap.ic_offer_semitransp)
+                    .placeholder(novelty.getNoveltyType() == Novelty.TYPE_NEWS ? R.mipmap.img_logo : R.mipmap.ic_offer_semitransp)
                     .resizeDimen(R.dimen.width_image_standard, R.dimen.height_image_small)
                     .into(binding.imgNovelty);
 

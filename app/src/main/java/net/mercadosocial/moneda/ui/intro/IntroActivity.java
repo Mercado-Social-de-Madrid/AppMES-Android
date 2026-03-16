@@ -26,9 +26,9 @@ public class IntroActivity extends BaseActivity implements ViewPager.OnPageChang
     private ImageView imgLogoMES;
 
     private void findViews() {
-        viewPager = (ViewPager) findViewById(R.id.viewpager_intro);
-        btnIntroNext = (ImageView) findViewById(R.id.btn_intro_next);
-        imgLogoMES = (ImageView) findViewById(R.id.img_logo_mes);
+        viewPager = findViewById(R.id.viewpager_intro);
+        btnIntroNext = findViewById(R.id.btn_intro_next);
+        imgLogoMES = findViewById(R.id.img_logo_mes);
 
         viewPager.addOnPageChangeListener(this);
         btnIntroNext.setOnClickListener(this);

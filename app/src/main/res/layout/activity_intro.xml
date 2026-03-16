@@ -15,7 +15,7 @@
         android:layout_centerHorizontal="true"
         android:layout_marginTop="60dp"
         android:contentDescription="@string/logo_mes"
-        android:src="@mipmap/img_mes_header" />
+        android:src="@mipmap/img_logo" />
 
     <androidx.viewpager.widget.ViewPager
         android:id="@+id/viewpager_intro"

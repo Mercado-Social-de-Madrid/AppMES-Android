@@ -2,7 +2,7 @@ package net.mercadosocial.moneda.ui.novelties.list;
 
 import android.content.Context;
 import androidx.recyclerview.widget.RecyclerView;
-import android.text.Html;
+
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -15,7 +15,6 @@ import net.mercadosocial.moneda.R;
 import net.mercadosocial.moneda.model.Entity;
 import net.mercadosocial.moneda.model.Novelty;
 import net.mercadosocial.moneda.model.Offer;
-import net.mercadosocial.moneda.util.WebUtils;
 
 import java.util.List;
 
@@ -26,10 +25,10 @@ public class NoveltiesAdapter extends RecyclerView.Adapter<NoveltiesAdapter.View
 
 
     private List<Novelty> novelties;
-    private Context context;
+    private final Context context;
     private OnItemClickListener itemClickListener;
 
-    private Integer selectedNumber = -1;
+    private final Integer selectedNumber = -1;
 
 
     public NoveltiesAdapter(Context context, List<Novelty> novelties) {
@@ -61,12 +60,12 @@ public class NoveltiesAdapter extends RecyclerView.Adapter<NoveltiesAdapter.View
         if (image != null) {
             Picasso.get()
                     .load(image)
-                    .placeholder(novelty.getNoveltyType() == Novelty.TYPE_NEWS ? R.mipmap.ic_mes_v2_144_semitransp : R.mipmap.ic_offer_semitransp)
-                    .error(novelty.getNoveltyType() == Novelty.TYPE_NEWS ? R.mipmap.ic_mes_v2_144 : R.mipmap.ic_offer_solid)
+                    .placeholder(novelty.getNoveltyType() == Novelty.TYPE_NEWS ? R.mipmap.ic_news_semitransp : R.mipmap.ic_offer_semitransp)
+                    .error(novelty.getNoveltyType() == Novelty.TYPE_NEWS ? R.mipmap.ic_news_solid : R.mipmap.ic_offer_solid)
                     .resizeDimen(R.dimen.width_image_small, R.dimen.height_image_small)
                     .into(holder.imgNovelty);
         } else {
-            holder.imgNovelty.setImageResource(novelty.getNoveltyType() == Novelty.TYPE_NEWS ? R.mipmap.ic_mes_v2_144 : R.mipmap.ic_offer_solid);
+            holder.imgNovelty.setImageResource(novelty.getNoveltyType() == Novelty.TYPE_NEWS ? R.mipmap.ic_mes_v3_green : R.mipmap.ic_offer_solid);
         }
 
         switch (novelty.getNoveltyType()) {
@@ -115,19 +114,19 @@ public class NoveltiesAdapter extends RecyclerView.Adapter<NoveltiesAdapter.View
     public class ViewHolder extends RecyclerView.ViewHolder {
         
         private final View rootView;
-        private ImageView imgNovelty;
-        private TextView tvNoveltyTitle;
-        private TextView tvNoveltyTextShort;
-        private TextView tvNoveltyDate;
+        private final ImageView imgNovelty;
+        private final TextView tvNoveltyTitle;
+        private final TextView tvNoveltyTextShort;
+        private final TextView tvNoveltyDate;
 
         public ViewHolder(View itemView) {
 
             super(itemView);
 
-            imgNovelty = (ImageView)itemView.findViewById( R.id.img_novelty );
-            tvNoveltyTitle = (TextView)itemView.findViewById( R.id.tv_novelty_title );
-            tvNoveltyTextShort = (TextView)itemView.findViewById( R.id.tv_novelty_text_short );
-            tvNoveltyDate = (TextView)itemView.findViewById( R.id.tv_novelty_date );
+            imgNovelty = itemView.findViewById( R.id.img_novelty );
+            tvNoveltyTitle = itemView.findViewById( R.id.tv_novelty_title );
+            tvNoveltyTextShort = itemView.findViewById( R.id.tv_novelty_text_short );
+            tvNoveltyDate = itemView.findViewById( R.id.tv_novelty_date );
 
             rootView = itemView;
 

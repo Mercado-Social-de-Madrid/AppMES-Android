@@ -28,8 +28,8 @@ public class EntitiesAdapter extends RecyclerView.Adapter<EntitiesAdapter.ViewHo
 
 
     private boolean showFavsStars;
-    private List<Entity> entities;
-    private Context context;
+    private final List<Entity> entities;
+    private final Context context;
     private OnItemClickListener itemClickListener;
 
     public EntitiesAdapter(Context context, List<Entity> entities, boolean showFavsStars) {

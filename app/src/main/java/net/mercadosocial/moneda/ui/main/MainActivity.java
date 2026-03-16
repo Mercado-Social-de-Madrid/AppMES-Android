@@ -96,7 +96,7 @@ public class MainActivity extends BaseActivity implements BottomNavigationView.O
     private TextView tvUsername;
     private TextView tvAppVersion;
     private RecyclerView recyclerSocialProfiles;
-    private List<SocialProfile> socialProfiles = new ArrayList<>();
+    private final List<SocialProfile> socialProfiles = new ArrayList<>();
     private NodeSocialProfileAdapter nodeSocialProfileAdapter;
 
     private void findViews() {
@@ -224,7 +224,7 @@ public class MainActivity extends BaseActivity implements BottomNavigationView.O
 
     private void configureDrawerLayout() {
 
-        drawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);
+        drawerLayout = findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
                 this, drawerLayout, toolbar, R.string.open, R.string.close);
         drawerLayout.addDrawerListener(toggle);

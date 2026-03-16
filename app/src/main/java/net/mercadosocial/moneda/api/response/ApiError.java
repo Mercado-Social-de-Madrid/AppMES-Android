@@ -14,7 +14,7 @@ public class ApiError {
 
     private String message;
     private String reason;
-    private String error;
+    private final String error;
 
 
     public static ApiError parse(Response response) {

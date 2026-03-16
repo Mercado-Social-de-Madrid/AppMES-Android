@@ -172,7 +172,7 @@
             android:layout_marginTop="20dp"
             android:layout_weight="1"
             android:adjustViewBounds="true"
-            app:srcCompat="@mipmap/img_mes_header"
+            app:srcCompat="@mipmap/img_logo"
             android:contentDescription="@null"/>
     </LinearLayout>
 </LinearLayout>

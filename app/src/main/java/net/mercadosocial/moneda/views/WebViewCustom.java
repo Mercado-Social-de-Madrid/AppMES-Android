@@ -35,8 +35,8 @@ public class WebViewCustom extends FrameLayout {
     }
 
     private void findViews(View layout) {
-        webview = (WebView) layout.findViewById(R.id.webview);
-        progressWebview = (ProgressBar) layout.findViewById(R.id.progress_webview);
+        webview = layout.findViewById(R.id.webview);
+        progressWebview = layout.findViewById(R.id.progress_webview);
     }
 
     public WebView getWebview() {

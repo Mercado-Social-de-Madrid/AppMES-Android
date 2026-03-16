@@ -27,7 +27,7 @@ public class NoveltiesPresenter extends BasePresenter {
     private final NoveltiesView view;
     private final OfferInteractor offerInteractor;
     private final NewsInteractor newsInteractor;
-    private List<Novelty> novelties = new ArrayList<>();
+    private final List<Novelty> novelties = new ArrayList<>();
 
     public static NoveltiesPresenter newInstance(NoveltiesView view, Context context) {
 

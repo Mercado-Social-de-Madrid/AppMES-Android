@@ -20,7 +20,7 @@ public class BlockActivity extends BaseActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_block);
 
-        EditText editTestCode = (EditText) findViewById(R.id.edit_test_code);
+        EditText editTestCode = findViewById(R.id.edit_test_code);
 
         findViewById(R.id.tv_block_text).setOnClickListener(v ->
                 WebUtils.openLink(this, "https://www.mercadosocial.net/"));

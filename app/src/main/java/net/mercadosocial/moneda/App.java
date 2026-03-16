@@ -91,7 +91,7 @@ public class App extends MultiDexApplication {
 
         // Periodic app update configuration
         new SimpleAppUpdate(this).cancelWork("appUpdateCheckWork");
-        NotificationStyle notificationStyle = new NotificationStyle(R.mipmap.ic_mes_v2_144, R.color.colorPrimary);
+        NotificationStyle notificationStyle = new NotificationStyle(R.mipmap.ic_mes_v3_green, R.color.colorPrimary);
         WorkerConfig workerConfig = new WorkerConfig(6, TimeUnit.HOURS, 2, TimeUnit.HOURS);
         SimpleAppUpdate.schedulePeriodicChecks(this, BuildConfig.VERSION_CODE, notificationStyle, workerConfig);
 

@@ -54,8 +54,8 @@ public class WebViewActivity extends BaseActivity {
     }
 
     private void findViews() {
-        webView = (WebView) findViewById(R.id.webview);
-        progressWebview = (ProgressBar) findViewById(R.id.progress_webview);
+        webView = findViewById(R.id.webview);
+        progressWebview = findViewById(R.id.progress_webview);
     }
 
     @Override

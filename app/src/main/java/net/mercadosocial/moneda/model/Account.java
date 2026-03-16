@@ -70,7 +70,7 @@ public abstract class Account implements Serializable {
     }
 
     public boolean isIntercoop() {
-        return intercoop != null ? intercoop.booleanValue() : false;
+        return intercoop != null && intercoop.booleanValue();
     }
 
     public void setIntercoop(Boolean intercoop) {

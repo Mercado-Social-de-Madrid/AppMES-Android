@@ -36,28 +36,28 @@ public class FediverseAdapter extends RecyclerView.Adapter<FediverseAdapter.View
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder {
-        private ImageView logo;
-        private TextView name;
-        private TextView username;
-        private TextView content;
-        private TextView timePosted;
-        private GridLayout mediaGallery;
-        private List<ImageView> mediaAttachments;
+        private final ImageView logo;
+        private final TextView name;
+        private final TextView username;
+        private final TextView content;
+        private final TextView timePosted;
+        private final GridLayout mediaGallery;
+        private final List<ImageView> mediaAttachments;
 
         public ViewHolder(View itemView) {
             super(itemView);
 
-            logo = (ImageView) itemView.findViewById(R.id.logo);
-            name = (TextView) itemView.findViewById(R.id.name);
-            username = (TextView) itemView.findViewById(R.id.username);
-            content = (TextView) itemView.findViewById(R.id.content);
-            timePosted = (TextView) itemView.findViewById(R.id.time_posted);
-            mediaGallery = (GridLayout) itemView.findViewById(R.id.media_gallery);
+            logo = itemView.findViewById(R.id.logo);
+            name = itemView.findViewById(R.id.name);
+            username = itemView.findViewById(R.id.username);
+            content = itemView.findViewById(R.id.content);
+            timePosted = itemView.findViewById(R.id.time_posted);
+            mediaGallery = itemView.findViewById(R.id.media_gallery);
             mediaAttachments = new ArrayList<>();
-            mediaAttachments.add ((ImageView) itemView.findViewById(R.id.image_preview_1));
-            mediaAttachments.add ((ImageView) itemView.findViewById(R.id.image_preview_2));
-            mediaAttachments.add ((ImageView) itemView.findViewById(R.id.image_preview_3));
-            mediaAttachments.add ((ImageView) itemView.findViewById(R.id.image_preview_4));
+            mediaAttachments.add (itemView.findViewById(R.id.image_preview_1));
+            mediaAttachments.add (itemView.findViewById(R.id.image_preview_2));
+            mediaAttachments.add (itemView.findViewById(R.id.image_preview_3));
+            mediaAttachments.add (itemView.findViewById(R.id.image_preview_4));
         }
     }
 

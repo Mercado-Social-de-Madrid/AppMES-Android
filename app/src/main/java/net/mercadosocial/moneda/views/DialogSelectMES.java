@@ -25,7 +25,7 @@ public class DialogSelectMES {
     public void show() {
 
         View layout = View.inflate(context, R.layout.view_dialog_change_social_market, null);
-        SelectMESView selectMESView = (SelectMESView) layout.findViewById(R.id.select_mes_view);
+        SelectMESView selectMESView = layout.findViewById(R.id.select_mes_view);
 
         AlertDialog dialog = new AlertDialog.Builder(context)
                 .setView(layout)
