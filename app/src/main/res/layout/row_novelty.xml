@@ -22,8 +22,8 @@
 
             <ImageView
                 android:id="@+id/img_novelty"
-                android:layout_width="80dp"
-                android:layout_height="80dp"
+                android:layout_width="@dimen/size_novelty_image"
+                android:layout_height="@dimen/size_novelty_image"
                 android:scaleType="centerCrop"
                 android:layout_marginEnd="8dp"
                 android:adjustViewBounds="true"
