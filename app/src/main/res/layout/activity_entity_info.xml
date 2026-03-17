@@ -37,7 +37,7 @@
                         android:layout_height="200dp"
                         android:background="@color/white" />
 
-                    <ImageView
+                    <androidx.appcompat.widget.AppCompatImageView
                         android:id="@+id/img_logo_entity"
                         android:layout_width="100dp"
                         android:layout_height="100dp"
@@ -48,7 +48,7 @@
                         android:background="@drawable/bg_circle_orange"
                         android:contentDescription="@string/entity_logo"
                         android:padding="3dp"
-                        android:src="@mipmap/img_entitiy_example" />
+                        app:srcCompat="@mipmap/img_logo"/>
 
                     <TextView
                         android:id="@+id/tv_categories"

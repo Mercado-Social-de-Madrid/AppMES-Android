@@ -22,6 +22,7 @@ class VersionChangesUtil(val context: Context) {
     )
 
     private val versionChanges = listOf(
+        VersionChanges(1002, "4.8.0", R.string.changes_4_8_0),
         VersionChanges(474, "4.7.4", R.string.changes_4_7_4),
     )
 

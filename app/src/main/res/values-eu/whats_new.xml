@@ -6,5 +6,8 @@
         \n- Informazio leiho hau bera gehitzen da aplikazioaren bertsio berri batean berrikuntza garrantzitsuak badaude
         \n- Android-en azken bertsioak dituzten telefonoetarako ertzetik ertzerako diseinua egokitu da
     </string>
-
+    <string name="changes_4_8.0">
+        - Identitate berria. Logotipo eta irudi aldaketak.\n
+        - Pantaila handietan interfazea hobetu da.
+    </string>
 </resources>
